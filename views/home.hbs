@@ -1,0 +1,59 @@
+{{!< default}}
+
+{{#contentFor 'pageStyles'}}
+    #main-name {
+        margin-bottom: 0em;
+    }
+    #work-list h4 {
+        margin-bottom: 0.25em;
+    }
+{{/contentFor}}
+
+    <div class="row">
+        <br/>
+        <div class="small-3 columns">
+            <div id="userPicturePanel" class="panel">
+                <img src="{{user.pictureUrl}}">
+            </div>
+        </div>
+        <div class="small-9 columns">
+            <h1 id="main-name">{{user.name}}<br/></h1>
+            <h4 class="subheader">{{user.email}}</h4>
+        </div>
+    </div>
+<!--
+    <div class="row">
+        <div class="small-12 columns">
+            <dl class="sub-nav">
+                <dt>Filter:</dt>
+                <dd class="active"><a href="#">All</a></dd>
+                <dd><a href="#">Articles</a></dd>
+                <dd><a href="#">Projects</a></dd>
+                <dd><a href="#">Other</a></dd>
+            </dl>
+        </div>
+    </div>
+ -->
+    <div class="row">
+        <div id="work-list" class="small-10 columns">
+
+{{#mediaFiles}}
+<a class="th radius" href="{{url}}">
+    <img src="{{url}}" width="200px">
+</a>
+{{/mediaFiles}}
+
+{{#things}}
+            <div class="panel">
+                <h4>{{title}}</h4>
+                <p><a href="#">Author Name</a>, <a href="#">Other Author Name</a>, and <a href="#">Last Author</a></p>
+                <p>{{description}}</p>
+            </div>
+{{/things}}
+        </div>
+{{#unless user.dropboxConnected}}
+        <div class="small-2 columns">
+            <a href="/connect/dropbox" class="button">Connect to Dropbox</a>
+        </div>
+{{/unless}}
+    </div>

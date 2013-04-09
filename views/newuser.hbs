@@ -1,0 +1,49 @@
+{{!< default}}
+
+{{#contentFor 'pageStyles'}}
+    #main-name {
+        margin-bottom: 0em;
+    }
+    #work-list h4 {
+        margin-bottom: 0.25em;
+    }
+{{/contentFor}}
+
+<br/>
+<br/>
+<div class="row">
+  <div class="small-8 large-offset-2 columns">
+    <p>Thanks for trying out CC OpenHome!<br>Tell us a little more about
+    yourself and you'll be up and running in no time.</p>
+  </div>
+</div>
+<br/>
+<br/>
+<br/>
+<div class="row">
+  <div class="small-7 small-offset-2">
+    <div class="row collapse">
+      <div class="small-10 columns">
+        <input type="text" id="name" placeholder="Your Name">
+      </div>
+      <div class="small-2 columns">
+        <a id="name-button" href="#" class="button postfix">Next</a>
+    </div>
+  </div>
+</div>
+
+{{#contentFor 'pageScripts' }}
+$('#name-button').click(function() {
+    $.ajax({
+      type: 'POST',
+      url: '/user/save',
+      data: {name: $('#name').val(), _csrf: csrfToken},
+      success: function(res, status, xhr) {
+        window.location = "/";
+      },
+      error: function(xhr, status, err) {
+        alert("Couldn't save new user, sorry!");
+      }
+    });
+});
+{{/contentFor}}

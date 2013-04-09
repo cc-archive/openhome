@@ -1,0 +1,28 @@
+        <nav class="top-bar">
+            <ul class="title-area">
+                <li class="name"><a href="#">
+                    <img src="/img/cc.large.png">
+                        <h1>OpenHome</h1>
+                        </a></li>
+                <li class="toggle-topbar menu-icon"><a href="#"><span></span></a></li>
+            </ul>
+
+            <section class="top-bar-section">
+                <ul class="right">
+{{#if user.email}}
+                    <li class="has-dropdown"><a href="#">Signed in</a>
+                        <ul class="dropdown">
+                            <li><label>Signed in as {{user.email}}</label></li>
+                            <li><a id="signout" href="#">Sign out</a></li>
+                        </ul>
+                    </li>
+{{else}}
+                    <li class="has-form">
+                        <a id="signin" href="#" class="persona-button orange">
+                            <span>Sign in</span>
+                        </a>
+                    </li>
+{{/if}}
+                </ul>
+            </section>
+        </nav>

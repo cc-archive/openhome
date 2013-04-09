@@ -1,0 +1,20 @@
+{
+  "_note1": "audience-base should not have trailing slash, :<port> appended at runtime",
+  "_note2": "client-sessions-secret should be set in local config to a random value",
+  "audience-base": "http://localhost",
+  "client-sessions-secret": "",
+  "port": 8000,
+  "aws": {
+    "_note1": "id and secret can be obtained from AWS at: My Account > Security Credentials > Access Credentials > Access Keys",
+    "_note2": "read-capacity and write-capacity are used when creating new tables only",
+    "id": "",
+    "secret": "",
+    "region": "us-east-1",
+    "read-capacity": 5,
+    "write-capacity": 2
+  },
+  "dropbox": {
+    "root": "dropbox",
+    "openhome-folder": "/CC"
+  }
+}
