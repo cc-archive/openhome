@@ -1,9 +1,11 @@
 {
   "_note1": "audience-base should not have trailing slash, :<port> appended at runtime",
-  "_note2": "client-sessions-secret should be set in local config to a random value",
+  "_note2": "toggle audience-with-port to not append, in case you want a proxy and node.js doesn't really know the outward facing port",
+  "_note3": "client-sessions-secret should be set in local config to a random value",
   "audience-base": "http://localhost",
   "client-sessions-secret": "",
   "port": 8000,
+  "audience-with-port": true,
   "aws": {
     "_note1": "id and secret can be obtained from AWS at: My Account > Security Credentials > Access Credentials > Access Keys",
     "_note2": "read-capacity and write-capacity are used when creating new tables only",
