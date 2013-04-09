@@ -40,12 +40,13 @@ app.use(express.static(__dirname + '/static'))
 // session.email when logged in
 // Note: must be below all middleware since it adds routes and causes
 // router to be installed
-require("express-persona")(app, {
-  audience: conf.get('audience-base') + ':' + conf.get('port') });
+var aud = conf.get('audience-base') + ':' + conf.get('port');
+console.log("Audience: " + aud);
+require("express-persona")(app, { audience: aud });
 
 // Install application routes
 require('./lib/routes')(app);
 
 // Start server
 console.log("Server running on port " + conf.get('port'));
-app.listen(conf.get('port'), '127.0.0.1');
+app.listen(conf.get('port'), '0.0.0.0');

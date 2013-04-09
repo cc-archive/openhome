@@ -25,25 +25,17 @@ Config settings are set in the following locations, in order of precedence:
 1. Env vars
 
 * PORT: set this to the desired port to have the server listen on.
-* CONFIG: set this to the path of the local config file to use (overrides its
-default location, see below).
 
 2. Local config file
 
-Default location: `config/local.json`
+Default location: `config.json`
 
 Not in version control. This file is where you should store any local settings
 or (importantly) secret keys. See "Required configuration" below.
 
-3. Production config file
+3. Default config file
 
-Default location: `config/prod.json`
-
-Only loaded if the `NODE_ENV` env var is set to `production`.
-
-4. Default config file
-
-Default location: ``config/default.json`
+Default location: ``config-defaults.json`
 
 Check out this file to see all the config settings you can tweak.
 
