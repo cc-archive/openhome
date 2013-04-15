@@ -1,7 +1,7 @@
 {
   "name": "openhome",
   "version": "0.0.0",
-  "description": "A service to store open access academic papers and create homepages for scholars.",
+  "description": "CC OpenHome is an experiment to create a service which users can log into and create a personalized homepage that mashes up content they have elsewhere on the web.",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
