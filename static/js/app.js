@@ -21,7 +21,7 @@ navigator.id.watch({
       type: 'POST',
       url: '/persona/logout',
       data: {_csrf: csrfToken},
-      success: function(res, status, xhr) { window.location.reload(); },
+      success: function(res, status, xhr) { document.location.href = '/'; },
       error: function(xhr, status, err) { alert("Logout failure: " + err); }
     });
   }
