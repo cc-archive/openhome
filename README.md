@@ -65,14 +65,11 @@ File: `config/local.json`
 Hacking
 -------
 
-In addition to the standard dependencies, [awsbox][] is useful for deploying
-to AWS, and [forever][] is great for hacking without having to manually
+In addition to the standard dependencies, [awsbox](https://github.com/mozilla/awsbox) is useful for deploying
+to AWS, and [forever](https://github.com/nodejitsu/forever) is great for hacking without having to manually
 restart the server all the time:
 
     [sudo] npm install -g forever
     forever -w index.js
 
 Have fun!
-
-[awsbox]: "https://github.com/mozilla/awsbox"
-[forever]: "https://github.com/nodejitsu/forever"
