@@ -12,9 +12,11 @@
     <div class="row">
         <br/>
         <div class="small-3 columns">
-            <div id="userPicturePanel" class="panel">
-                <img src="{{user.pictureUrl}}">
-            </div>
+            {{#if user.userData}}
+                <div id="userPicturePanel" class="panel">
+                    <img src="{{user.pictureUrl}}">
+                </div>
+            {{/if}}
         </div>
         <div class="small-9 columns">
             <h1 id="main-name">{{user.name}}<br/></h1>
@@ -51,9 +53,11 @@
             </div>
 {{/things}}
         </div>
-{{#unless user.dropboxConnected}}
+{{#if user.userData}}
+    {{#unless user.dropboxConnected}}
         <div class="small-2 columns">
             <a href="/connect/dropbox" class="button">Connect to Dropbox</a>
         </div>
-{{/unless}}
+    {{/unless}}
+{{/if}}
     </div>

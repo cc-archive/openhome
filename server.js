@@ -22,7 +22,8 @@ app.set('views', __dirname + '/views');
 // Middleware
 
 // Static files (at top to skip other middleware)
-app.use(express.static(__dirname + '/static'))
+app.use(express.favicon(__dirname+'/static/img/favicon.ico', {MaxAge: 1000000}))
+  .use(express.static(__dirname + '/static'))
   .use(express.bodyParser())
 // Client sessions: set secret to a lage random string in config-local.json
   .use(clientSessions({ secret: conf.get('client-sessions-secret') }))
